@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Grid from './components/Grid';
 import Colors from './components/Colors';
 import Save from './components/Save';

@@ -29,10 +29,10 @@ const Save = ({ savedSketchData, setSavedSketchData, currentGrid }) => {
             }, 350);
         }
 
-        document.addEventListener('click', delayDownload);
+        document.querySelector('.grid').addEventListener('click', delayDownload);
 
         return () => {
-            document.removeEventListener('click', delayDownload);
+            document.querySelector('.grid').removeEventListener('click', delayDownload);
         }
     }, [])
 
