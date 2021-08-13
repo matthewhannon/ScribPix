@@ -1,8 +1,7 @@
-import React, { useEffect, useState, createRef } from 'react';
+import React, { useEffect, createRef } from 'react';
 import Pixel from './Pixel';
 
-const Grid = ({ backgroundColor, color, defaultGrid, setDefaultGrid, currentGrid, setCurrentGrid, }) => {
-    const [drawing, setDrawing] = useState(false);
+const Grid = ({ backgroundColor, color, defaultGrid, setDefaultGrid, currentGrid, setCurrentGrid, drawing, setDrawing }) => {
     const ref = createRef();
 
     useEffect(() => {
@@ -37,7 +36,7 @@ const Grid = ({ backgroundColor, color, defaultGrid, setDefaultGrid, currentGrid
         return (() => {
             document.body.removeEventListener('mouseup', isItGrid, { capture: true })
         })
-    }, [ref])
+    }, [ref, setDrawing])
 
     const updatePixelColor = (location, color) => {
         let gridPixels = [...currentGrid];

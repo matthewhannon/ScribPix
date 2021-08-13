@@ -2,10 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Grid from './components/Grid';
 import Colors from './components/Colors';
 import Save from './components/Save';
-import ShowSavedSketches from './components/ShowSavedSketches';
 import Header from './components/Header';
 import CurrentColor from './components/CurrentColor';
-import html2canvas from 'html2canvas';
 
 const App = () => {
     const [color, setColor] = useState('#ffffff');
@@ -13,27 +11,14 @@ const App = () => {
     const [defaultGrid, setDefaultGrid] = useState([]);
     const [currentGrid, setCurrentGrid] = useState([]);
     const [savedSketchData, setSavedSketchData] = useState([]);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            html2canvas(document.querySelector('.grid'))
-            .then(canvas => {
-                return canvas.toDataURL();
-            })
-            .then(data => {
-                setSavedSketchData(data);
-            })
-        }, 500);
-
-        return () => {
-            clearTimeout(timer);
-        }
-    }, [currentGrid]);
+    const [drawing, setDrawing] = useState(false);
 
     return (
         <div className="app">
             <Header />
             <Grid
+                drawing={drawing}
+                setDrawing={setDrawing}
                 backgroundColor={backgroundColor} 
                 color={color}
                 defaultGrid={defaultGrid}
@@ -45,7 +30,10 @@ const App = () => {
                 eraseColor={backgroundColor} />
             <CurrentColor color={color} />
             <Save 
-                savedSketchData={savedSketchData}/>
+                savedSketchData={savedSketchData}
+                setSavedSketchData={setSavedSketchData}
+                currentGrid={currentGrid}
+                />
         </div>
     )
 }
