@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: 'Rubik', sans-serif;
+}
+
+h1 {
+    font-weight: 600;
+    color: #a4b0be;
+}
+
+h1 span {
+    color: #ced6e0;
+}
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(32, 10px);
+    margin: 2%;
+    /* cursor:none; */
+}
+
+.pixel {
+    height: 10px;
+    width: 10px;
+    background-color: rgb(116, 158, 158);
+}
+
+/* .pixel:hover {
+    background-color: red;
+} */
+
+.colors {
+    /* width: 320px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid hsl(221, 17%, 55%);
+}
+
+.color-btn {
+    width: calc(316px/7);
+    height: 30px;
+    border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.current-color-container {
+    padding-top: 2%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.current-color-container h3 {
+    padding-right: 2%;
+}
+
+.current-color {
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+}
+
+.save-btn {
+    border: none;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    border: 2px solid hsl(221, 17%, 55%);
+    margin: 2%;
+    padding: 2%;
+}
+.save-btn:hover {
+    color: #ffffff;
+    background-color: #2f3542;
+}
+
+.show-load-btns {
+    width: 322px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.load-btn {
+    width: calc(322px/8);
+    height: 50px;
+    border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+    padding: 2%;
+    background-color: #70a1ff;
+}
+.load-btn:hover {
+    background-color: #5352ed;
+}
