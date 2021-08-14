@@ -47,6 +47,7 @@ const Grid = ({ backgroundColor, color, defaultGrid, setDefaultGrid, currentGrid
     }
 
     const handleClick = (e) => {
+        e.preventDefault();
         if(!drawing && e.target.className === 'pixel' && e.type === 'mousedown') {
             setDrawing(true);
             e.target.style.backgroundColor = color;
